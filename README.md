@@ -24,6 +24,11 @@ The dataset used in this project contains housing data from the United States, f
 
 The scatter plot represents the housing market data, with each point corresponding to a year between 2020 and 2024. The first and second principal components are plotted to show how the data varies over time and identify key trends in the housing market.
 
+## PCA Scatterplot
+
+Below is the PCA scatterplot showing the first two principal components of the housing market data:
+
+![PCA Scatterplot](scatterplot.png)
 ### Key Insights:
 - The PCA transformation helps in identifying patterns and trends in the data that might not be apparent in the raw dataset.
 - By focusing on the first two principal components, we can observe the most significant variations in the housing market during the 2020-2024 period.
