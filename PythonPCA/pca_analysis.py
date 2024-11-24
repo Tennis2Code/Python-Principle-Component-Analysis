@@ -44,5 +44,6 @@ plt.ylabel('Second Principal Component')
 plt.title('PCA: Housing Market Data (2020-2024)')
 
 # Show the plot
-plt.legend()
+# Save the plot as an image file
+plt.savefig("/Users/lindytatum/Python/PythonPCA/pca_housing_plot.png", dpi=300, bbox_inches='tight')
 plt.show()
