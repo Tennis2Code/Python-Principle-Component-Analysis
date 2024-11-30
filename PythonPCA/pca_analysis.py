@@ -29,21 +29,26 @@ scaled_data = scaler.fit_transform(df_cleaned)
 pca = PCA(n_components=2)
 pca_result = pca.fit_transform(scaled_data)
 
-# Create a scatter plot with custom coloring for the 1st and 2nd principal components
-plt.figure(figsize=(8, 6))
+# Apply PCA transformation (reduce to 2 components)
+pca = PCA(n_components=2)
+pca_result = pca.fit_transform(scaled_data)
 
-# Plot first PC with blue color
-plt.scatter(pca_result[:, 0], pca_result[:, 1], c='blue', label='First Principal Component', alpha=0.6)
+# Create a 2-column, 1-row subplot grid
+fig, axes = plt.subplots(1, 2, figsize=(16, 6))
 
-# Plot second PC with yellow color
-plt.scatter(pca_result[:, 0], pca_result[:, 1], c='yellow', label='Second Principal Component', alpha=0.6)
+# Plot the first principal component on the first subplot
+axes[0].scatter(pca_result[:, 0], np.zeros_like(pca_result[:, 0]), c='blue', alpha=0.6)
+axes[0].set_title('First Principal Component')
+axes[0].set_xlabel('First Principal Component')
+axes[0].set_ylabel('Value')
 
-# Customize the plot
-plt.xlabel('First Principal Component')
-plt.ylabel('Second Principal Component')
-plt.title('PCA: Housing Market Data (2020-2024)')
+# Plot the second principal component on the second subplot
+axes[1].scatter(pca_result[:, 1], np.zeros_like(pca_result[:, 1]), c='yellow', alpha=0.6)
+axes[1].set_title('Second Principal Component')
+axes[1].set_xlabel('Second Principal Component')
+axes[1].set_ylabel('Value')
 
-# Show the plot
-# Save the plot as an image file
+# Save the plot
+plt.tight_layout()
 plt.savefig("/Users/lindytatum/Python/PythonPCA/pca_housing_plot.png", dpi=300, bbox_inches='tight')
 plt.show()
